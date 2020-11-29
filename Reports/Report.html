@@ -428,7 +428,7 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>Report.html</h1>
-    <p>Report generated on 29-Nov-2020 at 15:47:04 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.0.0</p>
+    <p>Report generated on 29-Nov-2020 at 16:01:08 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.0.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -444,7 +444,7 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.9.0</td></tr></table>
     <h2>Summary</h2>
-    <p>12 tests ran in 0.62 seconds. </p>
+    <p>12 tests ran in 0.81 seconds. </p>
     <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">7 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">5 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
@@ -460,11 +460,11 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">tests/test_delete_bear.py::test_delete_bear</td>
-          <td class="col-duration">0.02</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">def test_delete_bear():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        resp_get = alaska.delete_bear_by_id(resp_post.text)<br/>        assert resp_get.status_code == 200, f&quot;Unexpected result: was not able to DELETE bear with id &#x27;{resp_post.text}&#x27;.&quot;<br/>    <br/>        resp_get = alaska.get_bear_by_id(resp_post.text)<br/>&gt;       assert resp_get.status_code != 200, f&quot;Unexpected result: was able to GET bear with id &#x27;{resp_post.text}&#x27;.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to GET bear with id &#x27;274&#x27;.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_delete_bear.py:37: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 274
+            <div class="log">def test_delete_bear():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        resp_get = alaska.delete_bear_by_id(resp_post.text)<br/>        assert resp_get.status_code == 200, f&quot;Unexpected result: was not able to DELETE bear with id &#x27;{resp_post.text}&#x27;.&quot;<br/>    <br/>        resp_get = alaska.get_bear_by_id(resp_post.text)<br/>&gt;       assert resp_get.status_code != 200, f&quot;Unexpected result: was able to GET bear with id &#x27;{resp_post.text}&#x27;.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to GET bear with id &#x27;6&#x27;.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_delete_bear.py:37: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 6
 <br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
@@ -474,76 +474,76 @@ function filter_table(elem) { // eslint-disable-line no-unused-vars
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">def test_delete_bear_with_wrong_id():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        wrong_id = int(resp_post.text) + 1<br/>        resp_get = alaska.delete_bear_by_id(wrong_id)<br/>&gt;       assert resp_get.status_code != 200, f&quot;Unexpected result: was able to DELETE bear with wrong id &#x27;{wrong_id}&#x27;.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to DELETE bear with wrong id &#x27;276&#x27;.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_delete_bear.py:52: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 275
+            <div class="log">def test_delete_bear_with_wrong_id():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        wrong_id = int(resp_post.text) + 1<br/>        resp_get = alaska.delete_bear_by_id(wrong_id)<br/>&gt;       assert resp_get.status_code != 200, f&quot;Unexpected result: was able to DELETE bear with wrong id &#x27;{wrong_id}&#x27;.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to DELETE bear with wrong id &#x27;8&#x27;.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_delete_bear.py:52: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 7
 <br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">tests/test_get_bear.py::test_get_bear_with_wrong_id</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">def test_get_bear_with_wrong_id():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        wrong_id = int(resp_post.text) + 1<br/>        resp_get = alaska.get_bear_by_id(wrong_id)<br/>&gt;       assert resp_get.status_code != 200, f&quot;Unexpected result: was able to GET bear with wrong id &#x27;{wrong_id}&#x27;.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to GET bear with wrong id &#x27;283&#x27;.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_get_bear.py:47: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 282
+            <div class="log">def test_get_bear_with_wrong_id():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        wrong_id = int(resp_post.text) + 1<br/>        resp_get = alaska.get_bear_by_id(wrong_id)<br/>&gt;       assert resp_get.status_code != 200, f&quot;Unexpected result: was able to GET bear with wrong id &#x27;{wrong_id}&#x27;.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to GET bear with wrong id &#x27;15&#x27;.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_get_bear.py:47: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 14
 <br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">tests/test_put_bear.py::test_put_bear_simple</td>
-          <td class="col-duration">0.02</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">def test_put_bear_simple():<br/>        errors = []<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>        new_data = {&quot;bear_type&quot;: &quot;BROWN&quot;,<br/>                    &quot;bear_name&quot;: &quot;alex&quot;,<br/>                    &quot;bear_age&quot;: 22}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        resp_put = alaska.update_bear(resp_post.text, new_data)<br/>        print(resp_put.text)<br/>        assert resp_put.status_code == 200,\<br/>            f&quot;Unexpected result: was not able to PUT with new data {new_data}.&quot;<br/>    <br/>        resp_get = alaska.get_bear_by_id(resp_post.text)<br/>        resp_json = resp_get.json()<br/>        for key in new_data:<br/>            try:<br/>                assert new_data[key] == resp_json[key], f&quot;Wrong data value for &#x27;{key}&#x27;. &quot; \<br/>                                                        f&quot;Expected is &#x27;{new_data[key]}&#x27;. Actual is &#x27;{resp_json[key]}&#x27;&quot;<br/>            except AssertionError as e:<br/>                errors.append(e)<br/>    <br/>&gt;       assert len(errors) is 0, errors<br/><span class="error">E       AssertionError: [AssertionError(&quot;Wrong data value for &#x27;bear_type&#x27;. Expected is &#x27;BROWN&#x27;. Actual is &#x27;BLACK&#x27;</span><br/><span class="error">E         assert &#x27;BROWN&#x27; == &#x27;BLACK&#x27;&quot;), AssertionError(&quot;Wrong data value for &#x27;bear_age&#x27;. Expected is &#x27;22&#x27;. Actual is &#x27;17.5&#x27;</span><br/><span class="error">E         assert 22 == 17.5&quot;)]</span><br/><span class="error">E       assert 2 is 0</span><br/><span class="error">E        +  where 2 = len([AssertionError(&quot;Wrong data value for &#x27;bear_type&#x27;. Expected is &#x27;BROWN&#x27;. Actual is &#x27;BLACK&#x27;\nassert &#x27;BROWN&#x27; == &#x27;BLACK&#x27;&quot;), AssertionError(&quot;Wrong data value for &#x27;bear_age&#x27;. Expected is &#x27;22&#x27;. Actual is &#x27;17.5&#x27;\nassert 22 == 17.5&quot;)])</span><br/><br/>tests\test_put_bear.py:32: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 288
+            <div class="log">def test_put_bear_simple():<br/>        errors = []<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>        new_data = {&quot;bear_type&quot;: &quot;BROWN&quot;,<br/>                    &quot;bear_name&quot;: &quot;alex&quot;,<br/>                    &quot;bear_age&quot;: 22}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        resp_put = alaska.update_bear(resp_post.text, new_data)<br/>        print(resp_put.text)<br/>        assert resp_put.status_code == 200,\<br/>            f&quot;Unexpected result: was not able to PUT with new data {new_data}.&quot;<br/>    <br/>        resp_get = alaska.get_bear_by_id(resp_post.text)<br/>        resp_json = resp_get.json()<br/>        for key in new_data:<br/>            try:<br/>                assert new_data[key] == resp_json[key], f&quot;Wrong data value for &#x27;{key}&#x27;. &quot; \<br/>                                                        f&quot;Expected is &#x27;{new_data[key]}&#x27;. Actual is &#x27;{resp_json[key]}&#x27;&quot;<br/>            except AssertionError as e:<br/>                errors.append(e)<br/>    <br/>&gt;       assert len(errors) is 0, errors<br/><span class="error">E       AssertionError: [AssertionError(&quot;Wrong data value for &#x27;bear_type&#x27;. Expected is &#x27;BROWN&#x27;. Actual is &#x27;BLACK&#x27;</span><br/><span class="error">E         assert &#x27;BROWN&#x27; == &#x27;BLACK&#x27;&quot;), AssertionError(&quot;Wrong data value for &#x27;bear_age&#x27;. Expected is &#x27;22&#x27;. Actual is &#x27;17.5&#x27;</span><br/><span class="error">E         assert 22 == 17.5&quot;)]</span><br/><span class="error">E       assert 2 is 0</span><br/><span class="error">E        +  where 2 = len([AssertionError(&quot;Wrong data value for &#x27;bear_type&#x27;. Expected is &#x27;BROWN&#x27;. Actual is &#x27;BLACK&#x27;\nassert &#x27;BROWN&#x27; == &#x27;BLACK&#x27;&quot;), AssertionError(&quot;Wrong data value for &#x27;bear_age&#x27;. Expected is &#x27;22&#x27;. Actual is &#x27;17.5&#x27;\nassert 22 == 17.5&quot;)])</span><br/><br/>tests\test_put_bear.py:32: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 20
 OK
 <br/></div></td></tr></tbody>
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">tests/test_put_bear.py::test_put_bear_unavailable_type</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">def test_put_bear_unavailable_type():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>        new_data = {&quot;bear_type&quot;: &quot;GREEN&quot;,<br/>                    &quot;bear_name&quot;: &quot;alex&quot;,<br/>                    &quot;bear_age&quot;: 22}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        resp_put = alaska.update_bear(resp_post.text, new_data)<br/>&gt;       assert resp_put.status_code != 200, f&quot;Unexpected result: was able to PUT with unsupported bear type.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to PUT with unsupported bear type.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_put_bear.py:49: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 289
+            <div class="log">def test_put_bear_unavailable_type():<br/>        alaska = AlaskaCRUD()<br/>        data = {&quot;bear_type&quot;: &quot;BLACK&quot;,<br/>                &quot;bear_name&quot;: &quot;mikhail&quot;,<br/>                &quot;bear_age&quot;: 17.5}<br/>        new_data = {&quot;bear_type&quot;: &quot;GREEN&quot;,<br/>                    &quot;bear_name&quot;: &quot;alex&quot;,<br/>                    &quot;bear_age&quot;: 22}<br/>    <br/>        resp_post = alaska.create_bear(data)<br/>        print(f&quot;Created bear id is {resp_post.text}&quot;)<br/>        assert resp_post.status_code == 200, f&quot;Unexpected result: was not able to POST with data {data}.&quot;<br/>    <br/>        resp_put = alaska.update_bear(resp_post.text, new_data)<br/>&gt;       assert resp_put.status_code != 200, f&quot;Unexpected result: was able to PUT with unsupported bear type.&quot;<br/><span class="error">E       AssertionError: Unexpected result: was able to PUT with unsupported bear type.</span><br/><span class="error">E       assert 200 != 200</span><br/><br/>tests\test_put_bear.py:49: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 21
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_delete_bear.py::test_delete_all_bears</td>
-          <td class="col-duration">0.05</td>
+          <td class="col-duration">0.11</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 269
-Created bear id is 270
-Created bear id is 271
-Created bear id is 272
-Created bear id is 273
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 1
+Created bear id is 2
+Created bear id is 3
+Created bear id is 4
+Created bear id is 5
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_get_bear.py::test_get_all_bears</td>
-          <td class="col-duration">0.04</td>
+          <td class="col-duration">0.06</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 276
-Created bear id is 277
-Created bear id is 278
-Created bear id is 279
-Created bear id is 280
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 8
+Created bear id is 9
+Created bear id is 10
+Created bear id is 11
+Created bear id is 12
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_get_bear.py::test_get_bear</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 281
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 13
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
@@ -562,7 +562,7 @@ Created bear id is 280
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 283
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 15
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
@@ -572,16 +572,16 @@ Created bear id is 280
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 284
-Created bear id is 285
-Created bear id is 286
-Created bear id is 287
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>Created bear id is 16
+Created bear id is 17
+Created bear id is 18
+Created bear id is 19
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_post_bear.py::test_post_bear_unavailable_type</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
