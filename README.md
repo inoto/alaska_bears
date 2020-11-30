@@ -1,3 +1,15 @@
+# subject
+Testing of simple REST API.
+
+## object
+Docker container from https://hub.docker.com/r/azshoo/alaska with tag 1.0.  
+Run it and open by address `127.0.0.1:8091`.
+
+
+## tools used
+* Python 3.9
+* PyTest framework
+
 # Checklist for alaska CRUD
 Example data: {"bear_type":"BLACK","bear_name":"mikhail","bear_age":17.5}.
 
@@ -21,6 +33,5 @@ Example data: {"bear_type":"BLACK","bear_name":"mikhail","bear_age":17.5}.
 * Create a bear with example data and send DELETE to /bear/<created_bear_id> - then check DELETE response status_code is OK, check GET /bear/<created_bear_id> reponse status_code is NOT OK
 * Create a bear with example data and send DELETE to /bear/<created_bear_id>+1 - then check DELETE response status_code is NOT OK
 
-# Additional information
-This is a project to test RESP API using pytest framework.  
+# Additional information 
 Report file with latest run is included.
